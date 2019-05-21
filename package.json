@@ -1,0 +1,41 @@
+{
+  "name": "Prices",
+  "version": "1.0.0",
+  "description": "Prices of commodities",
+  "main": "app/app.js",
+  "scripts": {
+    "start": "electron app/app.js",
+    "build": "electron-builder --linux"
+  },
+  "build": {
+    "appId": "prices.desktop",
+    "artifactName": "prices-${version}_${arch}.${ext}",
+    "directories": {
+      "output": "dist"
+    },
+    "linux": {
+      "target": "AppImage"
+    },
+    "appImage": {
+      "systemIntegration": "doNotAsk"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "shortcutName": "prices"
+    },
+    "mac": {
+      "category": "public.app-category.entertainment",
+      "target": "zip"
+    }
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^3.0.2",
+    "electron-builder": "^20.40.2"
+  },
+  "dependencies": {
+    "papaparse": "^4.6.0"
+  }
+}
